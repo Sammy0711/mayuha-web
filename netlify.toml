@@ -1,6 +1,12 @@
 [build]
   publish = "."
 
+[[redirects]]
+  from = "/kensetsu-check"
+  to = "/ai-construction-license-automation.html"
+  status = 200
+
+
 
 
 
