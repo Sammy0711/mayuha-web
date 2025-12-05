@@ -1,164 +1,240 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>初期費用0円・月額1万円のWeb制作サブスク | まゆハ行政書士事務所</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Mayuha AI Service Hub</title>
+    <meta name="description" content="Mayuha AI Service Hub - 建設業許可チェック、Web制作サブスクなど、AIを活用したサービスを提供します。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
-        body { font-family: 'Noto Sans JP', sans-serif; }
-        .hero-bg { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://placehold.co/1920x1080/1a365d/ffffff?text=Mayuha+Web+Service'); background-size: cover; background-position: center; }
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--card-bg);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: var(--text-sub);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn.disabled {
+            background-color: #cbd5e1;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .badge-new {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-soon {
+            background-color: #f1f5f9;
+            color: #475569;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-sub);
+            margin-top: 4rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
 
-    <header class="bg-white shadow-sm fixed w-full z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-blue-900">Mayuha Web Subsc</h1>
-            <a href="https://lin.ee/d2ieH0W" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full font-bold transition duration-300">LINEで相談する</a>
+<body>
+
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">Mayuha AI Service Hub</a>
         </div>
     </header>
 
-    <section class="hero-bg h-screen flex items-center justify-center text-center text-white pt-16">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-6xl font-bold mb-4">初期費用0円。<br>月額1万円で、最強のWebサイトを。</h2>
-            <p class="text-xl mb-8">行政書士事務所が提供する、安心・安全・高品質なWeb制作サブスクリプション。</p>
-            
-            <div class="flex flex-col items-center gap-4">
-                 <div id="paypal-button-container-hero"></div>
-                 <a href="https://lin.ee/d2ieH0W" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg transition duration-300 w-64 text-center">LINEで相談する</a>
-            </div>
+    <main>
+        <div class="hero">
+            <h1>AI-Powered Solutions</h1>
+            <p>ビジネスを加速させる、MayuhaのAIサービス群</p>
         </div>
-    </section>
 
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h3 class="text-3xl font-bold text-center text-blue-900 mb-12">選ばれる3つの理由</h3>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 bg-blue-50 rounded-lg shadow hover:shadow-xl transition">
-                    <h4 class="text-xl font-bold mb-4 text-blue-800">初期コストゼロ</h4>
-                    <p>スタートアップや個人事業主に最適。初期費用0円で、すぐにビジネスを始められます。</p>
-                </div>
-                <div class="p-8 bg-blue-50 rounded-lg shadow hover:shadow-xl transition">
-                    <h4 class="text-xl font-bold mb-4 text-blue-800">全部おまかせ</h4>
-                    <p>SEO対策、スマホ対応、サーバー・ドメイン管理、保守まですべて込み。ビジネスに集中できます。</p>
-                </div>
-                <div class="p-8 bg-blue-50 rounded-lg shadow hover:shadow-xl transition">
-                    <h4 class="text-xl font-bold mb-4 text-blue-800">AI × 行政書士</h4>
-                    <p>最新AI技術による高速構築と、行政書士による信頼の監修で、安心と高品質を両立。</p>
-                </div>
+        <div class="services-grid">
+            <!-- Service 1: Construction License Check -->
+            <div class="card">
+                <div class="card-icon">🏗️</div>
+                <span class="badge badge-new">New</span>
+                <h2>建設業許可チェック</h2>
+                <p>AIが建設業許可の要件を即座に診断。経営業務管理責任者や専任技術者の要件を30秒でチェックできます。</p>
+                <a href="/kensetsu-check" class="btn">診断スタート</a>
             </div>
-        </div>
-    </section>
 
-    <section class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <h3 class="text-3xl font-bold text-blue-900 mb-8">シンプルな料金プラン</h3>
-            <div class="bg-white p-10 rounded-2xl shadow-xl max-w-lg mx-auto border-4 border-blue-900">
-                <p class="text-gray-500 mb-4">Webサイト制作・保守プラン</p>
-                <div class="text-5xl font-bold text-blue-900 mb-6">¥10,000<span class="text-lg text-gray-500"> / 月 (税込)</span></div>
-                <ul class="text-left mb-8 space-y-3">
-                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>初期費用 0円</li>
-                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>デザイン費 0円</li>
-                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>サーバー・ドメイン代込み</li>
-                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span>修正・保守サポート込み</li>
-                </ul>
-                <div id="paypal-button-container-pricing" class="flex justify-center"></div>
+            <!-- Service 2: Web Subscription -->
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <span class="badge badge-new">Coming Soon</span>
+                <h2>Web制作サブスク</h2>
+                <p>初期費用0円、月額定額制の高品質Web制作サービス。AIを活用したスピーディな構築と運用サポート。</p>
+                <a href="/web-subscription" class="btn">詳細を見る</a>
             </div>
-        </div>
-    </section>
 
-    <section class="py-16 bg-white border-t">
-        <div class="container mx-auto px-6 space-y-6">
-            <div class="max-w-4xl mx-auto bg-blue-50 rounded-2xl p-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="text-left">
-                    <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">New</span>
-                    <h3 class="text-xl font-bold text-blue-900 mt-2">高度人材ビザに関する2025年以降の最新の制度変更</h3>
-                    <p class="text-gray-600 text-sm mt-1">ポイント制の変更、永住権取得要件の緩和、家族帯同の優遇措置など、2025年以降の最新情報を詳しく解説。</p>
-                </div>
-                <a href="highly-skilled-professional-visa-2025.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow transition duration-300 whitespace-nowrap">
-                    記事を読む &rarr;
-                </a>
+            <!-- Placeholder 1 -->
+            <div class="card" style="opacity: 0.7;">
+                <div class="card-icon">🤖</div>
+                <span class="badge badge-soon">Planning</span>
+                <h2>AI Document Analysis</h2>
+                <p>契約書や申請書類をAIが解析し、リスクや不備を自動検知するサービス。</p>
+                <a href="#" class="btn disabled">準備中</a>
             </div>
-            <div class="max-w-4xl mx-auto bg-blue-50 rounded-2xl p-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="text-left">
-                    <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">New</span>
-                    <h3 class="text-xl font-bold text-blue-900 mt-2">AIで建設業許可を3時間から10分に！行政書士の自動化術</h3>
-                    <p class="text-gray-600 text-sm mt-1">AI技術を活用して建設業許可申請の作業時間を95%短縮。効率化のメリットと注意点を詳しく解説。</p>
-                </div>
-                <a href="ai-construction-license-automation.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow transition duration-300 whitespace-nowrap">
-                    記事を読む &rarr;
-                </a>
-            </div>
-            <div class="max-w-4xl mx-auto bg-blue-50 rounded-2xl p-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="text-left">
-                    <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full">New</span>
-                    <h3 class="text-xl font-bold text-blue-900 mt-2">【2026年度最新】小規模事業者持続化補助金の完全ガイド</h3>
-                    <p class="text-gray-600 text-sm mt-1">最大50万円の補助を受けられる小規模事業者持続化補助金。申請要件から成功のコツまで詳しく解説。</p>
-                </div>
-                <a href="small-business-subsidy-2026.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow transition duration-300 whitespace-nowrap">
-                    記事を読む &rarr;
-                </a>
-            </div>
-            <div class="max-w-4xl mx-auto bg-blue-50 rounded-2xl p-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="text-left">
-                    <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">New</span>
-                    <h3 class="text-xl font-bold text-blue-900 mt-2">【2025年版】Web制作に使える補助金・助成金トレンド</h3>
-                    <p class="text-gray-600 text-sm mt-1">IT導入補助金や小規模事業者持続化補助金など、最新の活用術を行政書士が解説。</p>
-                </div>
-                <a href="subsidy-2025.html" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow transition duration-300 whitespace-nowrap">
-                    記事を読む &rarr;
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <footer class="bg-blue-900 text-white py-10">
-        <div class="container mx-auto px-6 text-center">
-            <h4 class="text-xl font-bold mb-4">まゆハ行政書士事務所</h4>
-            <p class="mb-2">代表：麥生田 勇</p>
-            <p class="mb-6">所在地：大阪市北区西天満5-9-10 古河梅ヶ枝ビル601</p>
-            <p class="text-gray-400 text-sm">&copy; 2025 Mayuha Administrative Scrivener Office. All rights reserved.</p>
+            <!-- Placeholder 2 -->
+            <div class="card" style="opacity: 0.7;">
+                <div class="card-icon">📊</div>
+                <span class="badge badge-soon">Planning</span>
+                <h2>Business Insight AI</h2>
+                <p>売上データや市場トレンドを分析し、次のアクションを提案するビジネスインテリジェンスツール。</p>
+                <a href="#" class="btn disabled">準備中</a>
+            </div>
         </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mayuha. All rights reserved.</p>
     </footer>
 
-    <script src="https://www.paypal.com/sdk/js?client-id=AXjrmeJX1v_ziEb2DJWrIMR4t9UjOa8WjG8d1aYIDrxJ_TFsN3DVkjNR4L8jgmgm2AEzNmpKo1u4RRNB&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-    <script>
-      const planId = 'P-27V1269474843452XNEQWFQI';
-      
-      const style = {
-          shape: 'rect',
-          color: 'gold',
-          layout: 'vertical',
-          label: 'subscribe'
-      };
-
-      const createSubscription = function(data, actions) {
-        return actions.subscription.create({
-          plan_id: planId
-        });
-      };
-
-      const onApprove = function(data, actions) {
-        alert('ありがとうございます！お申し込みが完了しました。担当者よりご連絡いたします。');
-      };
-
-      // Render button in Hero
-      paypal.Buttons({
-          style: style,
-          createSubscription: createSubscription,
-          onApprove: onApprove
-      }).render('#paypal-button-container-hero');
-
-      // Render button in Pricing
-      paypal.Buttons({
-          style: style,
-          createSubscription: createSubscription,
-          onApprove: onApprove
-      }).render('#paypal-button-container-pricing');
-    </script>
 </body>
+
 </html>
-
-
