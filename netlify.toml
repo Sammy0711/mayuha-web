@@ -1,18 +1,15 @@
 [build]
-  publish = "."
+publish = "."
+command = ""
 
 [[redirects]]
-  from = "/kensetsu-check"
-  to = "/kensetsu-check.html"
-  status = 200
+from = "/web-subscription"
+to = "/web-subscription.html"
+status = 200
 
-
-
-
-
-
-
-
-
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
 
 

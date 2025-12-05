@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初期費用0円・月額1万円のWeb制作サブスク | Mayuha Web Subsc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://placehold.co/1920x1080/1a1a1a/333333?text=Mayuha+Web+Subsc');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Custom yellow for buttons if needed, but Tailwind yellow-400/500 is good */
+        .btn-yellow {
+            background-color: #f1c40f;
+            color: #1a1a1a;
+        }
+
+        .btn-yellow:hover {
+            background-color: #f39c12;
+        }
+    </style>
+</head>
+
+<body class="bg-[#1a1a1a] text-white antialiased">
+
+    <!-- Header -->
+    <header class="bg-[#1a1a1a]/90 backdrop-blur-sm fixed w-full z-50 border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white tracking-wider">Mayuha Web Subsc</h1>
+            <a href="https://lin.ee/d2ieH0W" target="_blank"
+                class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full font-bold transition duration-300 text-sm md:text-base">LINEで相談する</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center text-center pt-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                月額1万円で、<br>
+                <span class="text-[#f1c40f]">最強のWebサイト</span>を。
+            </h2>
+            <p class="text-lg md:text-xl mb-10 text-gray-300 max-w-2xl mx-auto">
+                行政書士事務所が提供する、安心・安全・高品質な<br class="hidden md:inline">Web制作サブスクリプション。
+            </p>
+
+            <div class="flex flex-col items-center gap-6">
+                <!-- PayPal Button Container -->
+                <div id="paypal-button-container-hero" class="w-full max-w-md"></div>
+
+                <div class="text-gray-400 text-sm">
+                    または
+                </div>
+
+                <a href="https://lin.ee/d2ieH0W" target="_blank"
+                    class="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white px-8 py-3 rounded-full text-lg font-bold transition duration-300 w-full max-w-md text-center">
+                    まずはLINEで無料相談
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-[#222]">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center text-white mb-16">選ばれる3つの理由</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="p-8 bg-[#1a1a1a] rounded-2xl border border-gray-800 hover:border-[#f1c40f] transition duration-300">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h4 class="text-xl font-bold mb-4 text-[#f1c40f]">初期コストゼロ</h4>
+                    <p class="text-gray-400">スタートアップや個人事業主に最適。初期費用0円で、すぐにビジネスを始められます。</p>
+                </div>
+                <div
+                    class="p-8 bg-[#1a1a1a] rounded-2xl border border-gray-800 hover:border-[#f1c40f] transition duration-300">
+                    <div class="text-4xl mb-4">🛠️</div>
+                    <h4 class="text-xl font-bold mb-4 text-[#f1c40f]">全部おまかせ</h4>
+                    <p class="text-gray-400">SEO対策、スマホ対応、サーバー・ドメイン管理、保守まですべて込み。ビジネスに集中できます。</p>
+                </div>
+                <div
+                    class="p-8 bg-[#1a1a1a] rounded-2xl border border-gray-800 hover:border-[#f1c40f] transition duration-300">
+                    <div class="text-4xl mb-4">⚖️</div>
+                    <h4 class="text-xl font-bold mb-4 text-[#f1c40f]">AI × 行政書士</h4>
+                    <p class="text-gray-400">最新AI技術による高速構築と、行政書士による信頼の監修で、安心と高品質を両立。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-20 bg-[#1a1a1a]">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-bold text-white mb-12">シンプルな料金プラン</h3>
+            <div
+                class="bg-[#222] p-10 rounded-3xl shadow-2xl max-w-lg mx-auto border-2 border-[#f1c40f] relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-[#f1c40f] text-black text-xs font-bold px-3 py-1 rounded-bl-lg">
+                    POPULAR</div>
+
+                <p class="text-gray-400 mb-4 uppercase tracking-widest text-sm">Web制作・保守プラン</p>
+                <div class="text-5xl font-bold text-white mb-2">¥10,000<span class="text-lg text-gray-500 font-normal">
+                        / 月 (税込)</span></div>
+                <div class="text-sm text-gray-500 mb-8">年額払いなら2ヶ月分お得</div>
+
+                <ul class="text-left mb-10 space-y-4 text-gray-300">
+                    <li class="flex items-center"><span class="text-[#f1c40f] mr-3">✓</span>初期費用 0円</li>
+                    <li class="flex items-center"><span class="text-[#f1c40f] mr-3">✓</span>デザイン費 0円</li>
+                    <li class="flex items-center"><span class="text-[#f1c40f] mr-3">✓</span>サーバー・ドメイン代込み</li>
+                    <li class="flex items-center"><span class="text-[#f1c40f] mr-3">✓</span>修正・保守サポート込み</li>
+                    <li class="flex items-center"><span class="text-[#f1c40f] mr-3">✓</span>いつでも解約可能</li>
+                </ul>
+
+                <div id="paypal-button-container-pricing" class="w-full"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h4 class="text-xl font-bold mb-4">まゆハ行政書士事務所</h4>
+            <p class="mb-2 text-gray-400">代表：麥生田 勇</p>
+            <p class="mb-6 text-gray-400">所在地：大阪市北区西天満5-9-10 古河梅ヶ枝ビル601</p>
+            <p class="text-gray-600 text-sm">&copy; 2025 Mayuha Administrative Scrivener Office. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- PayPal SDK -->
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AXjrmeJX1v_ziEb2DJWrIMR4t9UjOa8WjG8d1aYIDrxJ_TFsN3DVkjNR4L8jgmgm2AEzNmpKo1u4RRNB&vault=true&intent=subscription"
+        data-sdk-integration-source="button-factory"></script>
+    <script>
+        const planId = 'P-27V1269474843452XNEQWFQI';
+
+        const style = {
+            shape: 'rect',
+            color: 'gold',
+            layout: 'vertical',
+            label: 'subscribe'
+        };
+
+        const createSubscription = function (data, actions) {
+            return actions.subscription.create({
+                plan_id: planId
+            });
+        };
+
+        const onApprove = function (data, actions) {
+            alert('ありがとうございます！お申し込みが完了しました。担当者よりご連絡いたします。');
+        };
+
+        // Render button in Hero
+        paypal.Buttons({
+            style: style,
+            createSubscription: createSubscription,
+            onApprove: onApprove
+        }).render('#paypal-button-container-hero');
+
+        // Render button in Pricing
+        paypal.Buttons({
+            style: style,
+            createSubscription: createSubscription,
+            onApprove: onApprove
+        }).render('#paypal-button-container-pricing');
+    </script>
+</body>
+
+</html>
